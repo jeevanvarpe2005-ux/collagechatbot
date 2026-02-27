@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="chat-icon" onclick="toggleChat()">💬</div>
+
+<div id="chat-container">
+    <div id="chat-header">
+        College Enquiry Bot
+        <span onclick="toggleChat()">✖</span>
+    </div>
+
+    <div id="chatbox"></div>
+
+    <div id="input-area">
+        <input type="text" id="message" placeholder="Ask something...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock %}

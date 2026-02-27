@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Panel</h2>
+
+<form method="POST">
+    <input type="text" name="question" placeholder="Question"><br>
+    <textarea name="answer" placeholder="Answer"></textarea><br>
+    <button type="submit">Add FAQ</button>
+</form>
+
+<h3>Existing FAQs</h3>
+<ul>
+{% for faq in faqs %}
+    <li><b>{{ faq.question }}</b> - {{ faq.answer }}</li>
+{% endfor %}
+</ul>
+
+<a href="/chat">Back</a>
+{% endblock %}
